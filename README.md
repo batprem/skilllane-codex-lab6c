@@ -18,6 +18,17 @@ npm run dev
 
 If you previously installed with `--omit=dev`, run a fresh `npm install` so `vite` is available.
 
+## Troubleshooting
+
+- If you see `crypto.getRandomValues is not a function`, reinstall dependencies after this update:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+This project now pins Vite 4 for better compatibility with older Node runtimes.
+
 ## Production preview
 
 ```bash
