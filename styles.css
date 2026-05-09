@@ -1,0 +1,107 @@
+:root {
+  --orange: #ff5a0a;
+  --paper: #f3f3f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  background: linear-gradient(160deg, #f8f8f8, #ececec);
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 2rem;
+  padding: 1.8rem;
+}
+
+.hero-card {
+  min-height: 92vh;
+  border-radius: 2rem;
+  background: var(--orange);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: clamp(1.2rem, 2vw, 2.1rem);
+  letter-spacing: 0.08em;
+}
+
+.brand-icon {
+  font-size: 2rem;
+}
+
+.ascii-mark {
+  margin: 6rem 0 0;
+  white-space: pre;
+  font-size: clamp(1.1rem, 1.5vw, 1.8rem);
+  line-height: 1.05;
+  opacity: 0.9;
+}
+
+.pulse-orb {
+  width: min(48vw, 470px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  left: 38%;
+  top: 36%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg, #fff 0deg 15deg, rgba(255, 255, 255, 0.25) 20deg 50deg, #fff 55deg 75deg, rgba(255, 255, 255, 0.25) 80deg 110deg, #fff 115deg 130deg, rgba(255, 255, 255, 0.25) 135deg 180deg, #fff 185deg 205deg, rgba(255, 255, 255, 0.25) 210deg 260deg, #fff 265deg 285deg, rgba(255, 255, 255, 0.25) 290deg 335deg, #fff 340deg 360deg);
+  filter: blur(1.5px);
+  animation: spin 7s linear infinite;
+  mix-blend-mode: screen;
+}
+
+.poem {
+  position: absolute;
+  left: 2rem;
+  bottom: 2.3rem;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  line-height: 1.7;
+}
+
+.preview-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ghost-card {
+  border-radius: 2rem;
+  min-height: 45vh;
+  border: 1px solid #ddd;
+  background: linear-gradient(160deg, #f8f8f8, #efefef);
+}
+
+.browser {
+  min-height: 40vh;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (max-width: 1000px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    min-height: 78vh;
+  }
+}
